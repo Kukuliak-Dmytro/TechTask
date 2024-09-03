@@ -19,20 +19,20 @@ interface Comment {
   description: string;
   date: string; 
 }
-interface TodoState {
+interface BooksState {
   isLoading: boolean;
   data: Book[];
   error: boolean;
 }
 
-const initialState: TodoState = {
+const initialState: BooksState = {
   isLoading: false,
   data: [],
   error: false,
 };
 
-export const fetchTodo = createAsyncThunk<Book[]>(
-  'todo/fetchTodo',
+export const fetchBooks = createAsyncThunk<Book[]>(
+  'todo/fetchBooks',
   async () => {
     const response = await fetch('http://localhost:8000/books');
     if (!response.ok) {
@@ -48,14 +48,14 @@ const todoSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchTodo.pending, (state) => {
+      .addCase(fetchBooks.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(fetchTodo.fulfilled, (state, action) => {
+      .addCase(fetchBooks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = action.payload;
       })
-      .addCase(fetchTodo.rejected, (state) => {
+      .addCase(fetchBooks.rejected, (state) => {
         state.isLoading = false;
         state.error = true;
       });

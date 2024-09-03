@@ -29,21 +29,21 @@ interface Props {
     book: Book;
 }
 
-  
-  const Card: React.FC<Props> = ({ book }) => {
+
+const Card: React.FC<Props> = ({ book }) => {
     const { id, imageUrl, name, count, size, weight, pages, comments } = book;
     const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState<React.ReactNode>(null);
+    const [modalContent, setModalContent] = useState<React.ReactNode>(null);
 
-  const openModal = (content: React.ReactNode) => {
-    setModalContent(content);
-    setIsModalOpen(true);
-  };
+    const openModal = (content: React.ReactNode) => {
+        setModalContent(content);
+        setIsModalOpen(true);
+    };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setModalContent(null);
-  };
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setModalContent(null);
+    };
     return (
         <div className={styles.card}>
             <img src={imageUrl} alt={name} />
@@ -64,11 +64,11 @@ interface Props {
                     ))}
                 </ul>
             </div>
-            <button onClick={()=>openModal(<div><UpdateBookForm book={book}></UpdateBookForm></div>)}>Edit</button>
-            <button onClick={()=>openModal(<div><button onClick={()=>{deleteBook(id); location.reload();}}>delete book</button></div>)}>Delete</button>
+            <button onClick={() => openModal(<div><UpdateBookForm book={book}></UpdateBookForm></div>)}>Edit</button>
+            <button onClick={() => openModal(<div><button onClick={() => { deleteBook(id); location.reload(); }}>delete book</button></div>)}>Delete</button>
             <Modal isOpen={isModalOpen} onClose={closeModal} title="Dynamic Content Modal">
-        {modalContent}
-      </Modal>
+                {modalContent}
+            </Modal>
         </div>
     );
 };

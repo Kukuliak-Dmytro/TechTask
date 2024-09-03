@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import todoReducer from './todoSlicer';
+import todoReducer from './bookSlicer';
 
 export const store = configureStore({
   reducer: {

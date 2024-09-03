@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { RootState, AppDispatch } from './redux/store'; // Update path as needed
-import { fetchTodo } from './redux/todoSlicer';
+import { fetchBooks } from './redux/bookSlicer';
 import Card from './Card/Card';
 
 const Books = () => {
@@ -9,7 +9,7 @@ const Books = () => {
   const { isLoading, data, error } = useSelector((state: RootState) => state.todo);
 
   useEffect(() => {
-    dispatch(fetchTodo());
+    dispatch(fetchBooks());
   }, [dispatch]);
   
   if (isLoading) {
@@ -22,8 +22,8 @@ const Books = () => {
 
   return (
     <>
-       {data.map((todo) => (
-        <Card key={todo.id} book={todo}></Card>
+       {data.map((book) => (
+        <Card key={book.id} book={book}></Card>
       ))} 
       
     </>
