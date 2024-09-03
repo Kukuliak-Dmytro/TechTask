@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { updateBook } from '../Modal/Modal';
+import { addBook, updateBook } from '../Functions/Functions';
 
 interface Book {
   id: number;
@@ -22,10 +22,11 @@ interface Comment {
 }
 
 interface UpdateBookFormProps {
-  book: Book;  
+  book: Book; 
+  updateOrInsert:string; 
 }
 
-const UpdateBookForm: React.FC<UpdateBookFormProps> = ({ book }) => {
+const UpdateBookForm: React.FC<UpdateBookFormProps> = ({ book, updateOrInsert }) => {
   const id=book.id;
   const [name, setName] = useState(book.name);
   const [imageUrl, setImageUrl] = useState(book.imageUrl);
@@ -37,7 +38,7 @@ const UpdateBookForm: React.FC<UpdateBookFormProps> = ({ book }) => {
   const comments=book.comments;
 
   const handleSubmit = () => {
-    const updatedData = {
+        const updatedData = {
         id,
       name,
       imageUrl,
@@ -47,8 +48,11 @@ const UpdateBookForm: React.FC<UpdateBookFormProps> = ({ book }) => {
       pages,
       comments
     };
-
-   updateBook(book.id, updatedData);
+    if(updateOrInsert==='update'){
+   updateBook(book.id, updatedData);}
+   else if(updateOrInsert==='insert'){    
+    addBook(updatedData);
+   }
   };
 
   return (

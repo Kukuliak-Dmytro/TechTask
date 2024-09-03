@@ -1,6 +1,6 @@
 // Modal.tsx
 import React from 'react';
-import styles from './Modal.module.css'; // Include your modal styling here
+import styles from './Functions.module.css';
 interface Comment {
     id: number;
     description: string;
@@ -66,6 +66,26 @@ export const updateBook = async (id: number, updatedData: Book) => {
         console.error('Error:', error);
     }
 };
+export const addBook = async (newBook: Book) => {
+    try {
+        const response = await fetch(`http://localhost:8000/books`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newBook),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to add the book');
+        }
+
+        console.log('Book added successfully');
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     if (!isOpen) return null;
 

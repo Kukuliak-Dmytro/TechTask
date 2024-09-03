@@ -1,8 +1,8 @@
 import styles from './Card.module.css'
-import Modal, { updateBook } from '../Modal/Modal';
+import Modal, { updateBook } from '../Functions/Functions';
 import { useState } from 'react';
-import { deleteBook } from '../Modal/Modal';
-import UpdateBookForm from '../Form/Form';
+import { deleteBook } from '../Functions/Functions';
+import UpdateBookForm from '../Form/UpdateForm';
 interface Size {
     width: number;
     height: number;
@@ -64,7 +64,7 @@ const Card: React.FC<Props> = ({ book }) => {
                     ))}
                 </ul>
             </div>
-            <button onClick={() => openModal(<div><UpdateBookForm book={book}></UpdateBookForm></div>)}>Edit</button>
+            <button onClick={() => openModal(<div><UpdateBookForm book={book} updateOrInsert='update'></UpdateBookForm></div>)}>Edit</button>
             <button onClick={() => openModal(<div><button onClick={() => { deleteBook(id); location.reload(); }}>delete book</button></div>)}>Delete</button>
             <Modal isOpen={isModalOpen} onClose={closeModal} title="Dynamic Content Modal">
                 {modalContent}
