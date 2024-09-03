@@ -1,21 +1,204 @@
 {
-    "books": [
-      {
-        "id": 1,
-        "title": "1984",
-        "author": "George Orwell",
-        "genre": "Dystopian fiction",
-        "yearPublished": 1948
-        
+  "books": [
+    {
+      "id": 1,
+      "imageUrl": "https://example.com/image1.jpg",
+      "name": "The Great Book",
+      "count": 10,
+      "size": {
+        "width": 150,
+        "height": 200
       },
-      {
-        "id": 2,
-        "title": "The circle",
-        "author": "Dave Eggers",
-        "genre": "Dystopian fiction",
-        "yearPublished": 2013
-       
-      }
-    ]
-  }
-  
+      "weight": "250g",
+      "pages": 320,
+      "comments": [
+        {
+          "id": 1,
+          "description": "Amazing book! Highly recommended.",
+          "date": "14:00 22.08.2021"
+        },
+        {
+          "id": 2,
+          "description": "Very informative and well-written.",
+          "date": "16:00 23.08.2021"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://example.com/image2.jpg",
+      "name": "Another Great Book",
+      "count": 5,
+      "size": {
+        "width": 180,
+        "height": 220
+      },
+      "weight": "300g",
+      "pages": 250,
+      "comments": [
+        {
+          "id": 3,
+          "description": "A must-read for enthusiasts.",
+          "date": "12:00 24.08.2021"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://example.com/image3.jpg",
+      "name": "The Mysterious Novel",
+      "count": 8,
+      "size": {
+        "width": 160,
+        "height": 210
+      },
+      "weight": "270g",
+      "pages": 300,
+      "comments": [
+        {
+          "id": 4,
+          "description": "Thrilling read from start to finish.",
+          "date": "10:00 25.08.2021"
+        },
+        {
+          "id": 5,
+          "description": "Captivating story with unexpected twists.",
+          "date": "11:00 26.08.2021"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://example.com/image4.jpg",
+      "name": "Science Fiction Saga",
+      "count": 6,
+      "size": {
+        "width": 175,
+        "height": 225
+      },
+      "weight": "320g",
+      "pages": 350,
+      "comments": [
+        {
+          "id": 6,
+          "description": "A classic in the sci-fi genre.",
+          "date": "09:00 27.08.2021"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://example.com/image5.jpg",
+      "name": "Historical Fiction",
+      "count": 7,
+      "size": {
+        "width": 170,
+        "height": 200
+      },
+      "weight": "280g",
+      "pages": 280,
+      "comments": [
+        {
+          "id": 7,
+          "description": "Richly detailed and immersive.",
+          "date": "13:00 28.08.2021"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://example.com/image6.jpg",
+      "name": "Romantic Tale",
+      "count": 9,
+      "size": {
+        "width": 155,
+        "height": 205
+      },
+      "weight": "260g",
+      "pages": 270,
+      "comments": [
+        {
+          "id": 8,
+          "description": "Heartwarming and beautifully written.",
+          "date": "15:00 29.08.2021"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://example.com/image7.jpg",
+      "name": "Adventure Book",
+      "count": 4,
+      "size": {
+        "width": 185,
+        "height": 230
+      },
+      "weight": "330g",
+      "pages": 350,
+      "comments": [
+        {
+          "id": 9,
+          "description": "Exciting and action-packed.",
+          "date": "17:00 30.08.2021"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://example.com/image8.jpg",
+      "name": "Self-Help Guide",
+      "count": 3,
+      "size": {
+        "width": 160,
+        "height": 210
+      },
+      "weight": "240g",
+      "pages": 200,
+      "comments": [
+        {
+          "id": 10,
+          "description": "Inspirational and practical advice.",
+          "date": "18:00 31.08.2021"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://example.com/image9.jpg",
+      "name": "Cooking Book",
+      "count": 12,
+      "size": {
+        "width": 190,
+        "height": 220
+      },
+      "weight": "350g",
+      "pages": 350,
+      "comments": [
+        {
+          "id": 11,
+          "description": "Delicious recipes and beautiful photography.",
+          "date": "20:00 01.09.2021"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://example.com/image10.jpg",
+      "name": "Travel Guide",
+      "count": 11,
+      "size": {
+        "width": 175,
+        "height": 215
+      },
+      "weight": "290g",
+      "pages": 220,
+      "comments": [
+        {
+          "id": 12,
+          "description": "Great guide for planning your next trip.",
+          "date": "21:00 02.09.2021"
+        }
+      ]
+    }
+  ]
+}
