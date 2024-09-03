@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 interface Book {
-  id: string;
+  id: number;
   imageUrl: string;
   name: string;
   count: number;

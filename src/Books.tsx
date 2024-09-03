@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { RootState, AppDispatch } from './redux/store'; // Update path as needed
 import { fetchTodo } from './redux/todoSlicer';
-
+import Card from './Card/Card';
 
 const Books = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -17,14 +17,15 @@ const Books = () => {
   }
 
   if (error) {
-    return <h1>Error occurred while fetching todos.</h1>;
+    return <h1>Error occurred while fetching books.</h1>;
   }
 
   return (
     <>
-      {data.map((todo) => (
-        <p key={todo.id}>{todo.name}</p>
-      ))}
+       {data.map((todo) => (
+        <Card key={todo.id} book={todo}></Card>
+      ))} 
+      
     </>
   );
 };
