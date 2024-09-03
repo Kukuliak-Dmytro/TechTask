@@ -17,7 +17,7 @@ interface Book {
 interface Comment {
   id: number;
   description: string;
-  date: string; // ISO string for date and time
+  date: string; 
 }
 interface TodoState {
   isLoading: boolean;

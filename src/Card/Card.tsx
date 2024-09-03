@@ -1,5 +1,8 @@
-import  { FunctionComponent } from 'react';
-
+import styles from './Card.module.css'
+import Modal, { updateBook } from '../Modal/Modal';
+import { useState } from 'react';
+import { deleteBook } from '../Modal/Modal';
+import UpdateBookForm from '../Form/Form';
 interface Size {
     width: number;
     height: number;
@@ -25,30 +28,24 @@ interface Book {
 interface Props {
     book: Book;
 }
-const deleteBook = async (id:number) => {
-    try {
-      const response = await fetch(`http://localhost:8000/books/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+
   
-      if (!response.ok) {
-        throw new Error('Failed to delete');
-      }
-  
-      console.log('Book deleted successfully');
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
-  
-  
-const Card: FunctionComponent<Props> = ({ book }) => {
+  const Card: React.FC<Props> = ({ book }) => {
     const { id, imageUrl, name, count, size, weight, pages, comments } = book;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState<React.ReactNode>(null);
+
+  const openModal = (content: React.ReactNode) => {
+    setModalContent(content);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalContent(null);
+  };
     return (
-        <div className="card">
+        <div className={styles.card}>
             <img src={imageUrl} alt={name} />
             <h2>{name}</h2>
             <p>ID: {id}</p>
@@ -67,9 +64,11 @@ const Card: FunctionComponent<Props> = ({ book }) => {
                     ))}
                 </ul>
             </div>
-            <button>Edit</button>
-            <button onClick={()=>deleteBook(id)}>Delete</button>
-
+            <button onClick={()=>openModal(<div><UpdateBookForm book={book}></UpdateBookForm></div>)}>Edit</button>
+            <button onClick={()=>openModal(<div><button onClick={()=>{deleteBook(id); location.reload();}}>delete book</button></div>)}>Delete</button>
+            <Modal isOpen={isModalOpen} onClose={closeModal} title="Dynamic Content Modal">
+        {modalContent}
+      </Modal>
         </div>
     );
 };
