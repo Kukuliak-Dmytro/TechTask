@@ -1,0 +1,21 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "title": "1984",
+        "author": "George Orwell",
+        "genre": "Dystopian fiction",
+        "yearPublished": 1948
+        
+      },
+      {
+        "id": 2,
+        "title": "The circle",
+        "author": "Dave Eggers",
+        "genre": "Dystopian fiction",
+        "yearPublished": 2013
+       
+      }
+    ]
+  }
+  
